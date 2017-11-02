@@ -1,0 +1,63 @@
+
+<h3 class="text-center"><u>CRUD for Single Company Object</u></h3>
+<div *ngIf="company$ | async as co" style="width: 40%; margin: 0 auto;">
+  <p>Please use Firebase console to view changes for tree node "company" under "Experiment" project</p>
+  <input type="text" mdInput [(ngModel)]="co.name" class="form-control"><br/>
+
+  <button class="btn btn-success" (click)="saveCompany(co)">Set</button>
+  <button class="btn btn-success" (click)="updateCompany({phone: '221-332-3333'})">Update</button>
+  <button class="btn btn-success" (click)="removeAll()">Remove</button>
+
+  <br/><br/>
+</div>
+
+<div style="width: 40%; margin: 0 auto;">
+  <h3 class="text-center"><u>CRUD for Company List</u></h3>
+  <p>Please use Firebase console to view changes for tree node "companies" under "Experiment" project</p>
+
+  <input type="text" [(ngModel)]="createEntry" class="form-control" style="margin-top: 20px"><br/>
+  <button class="btn btn-primary" (click)="addCompany()">Add Company</button>
+  <button class="btn btn-danger" (click)="removeAllCompanies()">Remove All Companies</button>
+
+  <!--show a list of companies-->
+  <h4 class="text-center">List of Companies</h4>
+  <div class="well" *ngIf="nodes"style="width: 80%; border: 1px solid skyblue; margin: 0 auto;">
+    <div *ngFor="let NODE of nodes">
+      <input [(ngModel)]="NODE.name">
+      <i class="fa fa-pencil" (click)="updateCompanyByKey(NODE)"></i>
+      <i class="fa fa-trash" style="cursor: pointer" (click)="removeCompany(NODE.dbKey)"></i>
+    </div>
+  </div>
+
+<!-- Alternative 1 to show list
+  <div class="well" *ngIf="companies$ | async as cos"
+       style="width: 80%; border: 1px solid skyblue; margin: 0 auto;">
+    <div *ngFor="let CO of cos">
+      <input [(ngModel)]="CO.name">
+      <i class="fa fa-pencil" (click)="updateCompanyByKey(CO)"></i>
+      <i class="fa fa-trash" style="cursor: pointer" (click)="removeCompany(CO.key)"></i>
+    </div>
+  </div>
+-->
+
+<!-- Alternative 2 to show list
+
+  <div class="well">
+    <p *ngFor="let cn of companyNames">
+      {{cn.name}}
+    </p>
+  </div>
+
+-->
+
+<!-- Alternative 3  to show list
+
+  <div class="panel">
+    <p *ngFor="let COP of getCompanies() | async">
+      {{COP.name}}
+    </p>
+  </div>
+
+-->
+
+</div>

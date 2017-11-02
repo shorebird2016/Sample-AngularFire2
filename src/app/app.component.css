@@ -1,0 +1,46 @@
+.container {
+  margin: 20px; }
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: deepskyblue;
+  width: 100%;
+  padding: 0 0 0 10px;
+  color: white;
+  z-index: 1000; }
+
+.menu-item {
+  padding: 10px 10px 10px 10px;
+  cursor: pointer; }
+
+.menu-item:hover {
+  background: lightgray;
+  color: blue; }
+
+.menu-item a {
+  text-decoration: none; }
+
+.menu-item a:link {
+  color: white; }
+
+.menu-item a:visited {
+  color: white; }
+
+.menu-item a:hover {
+  color: black; }
+
+/*.menu-item a:active { color: greenyellow; }*/
+.menu-item a.active {
+  color: yellow; }
+
+.app-header ul {
+  list-style-type: none;
+  margin: 0; }
+
+.app-header li {
+  display: inline-block;
+  font-size: 1.2em; }
+
+/*# sourceMappingURL=app.component.css.map */

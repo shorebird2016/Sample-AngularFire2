@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAiB;EACf,UAAU,EAAE,IAAI",
+"sources": ["rxjs.component.scss"],
+"names": [],
+"file": "rxjs.component.css"
+}
